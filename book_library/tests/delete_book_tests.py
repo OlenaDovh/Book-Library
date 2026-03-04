@@ -8,13 +8,6 @@ import pytest
     ("anonymous", 401),
 ])
 def test_delete_book(user_type, expected_status, admin_user, regular_user, authenticate, api_client, api_urls, book_id):
-    # admin_client = authenticate(admin_user)
-    # book_res = admin_client.post(api_urls.book_list,
-    #                              {"title": "To be deleted",
-    #                               "author": "A",
-    #                               "genre": "G",
-    #                               "publication_year": 2000})
-
     client = api_client
     if user_type == "admin":
         client = authenticate(admin_user)
